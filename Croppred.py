@@ -219,11 +219,7 @@ def process_sensor_data(data):
     for advice_item in latest_analysis['advice']:
         print(f"- {advice_item}")
 
-# Flask Routes
-@app.route('/')
-def dashboard():
-    """Render the main dashboard page"""
-    return render_template('dashboard.html', analysis=latest_analysis)
+
 
 @app.route('/api/data')
 def get_data():
