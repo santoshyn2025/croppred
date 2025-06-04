@@ -230,6 +230,11 @@ def get_data():
     """API endpoint to get current analysis data"""
     return jsonify(latest_analysis)
 
+@app.route('/healthz')
+def health_check():
+    """Health check endpoint for Render"""
+    return jsonify({"status": "healthy", "timestamp": time.strftime('%Y-%m-%d %H:%M:%S')}), 200
+
 # Firebase Listener
 def setup_firebase_listener():
     """Set up Firebase realtime database listener"""
